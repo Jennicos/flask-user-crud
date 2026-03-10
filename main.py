@@ -1,17 +1,18 @@
-# Solicitar informações do usuário
-nome_completo = input("Digite seu nome completo: ")
-email = input("Digite seu email: ")
-data_nascimento = input("Digite sua data de nascimento (dd/mm/aaaa): ")
+usuarios = {}
 
-# Armazenar as informações em um dicionário
-dados_usuario = {
-    "Nome Completo": nome_completo,
-    "Email": email,
-    "Data de Nascimento": data_nascimento
-}
+while True:
+    print("Opções:")
+    print("1- Cadastro")
+    print("2- Login")
+    opcoes = int(input("Escolha uma opção: "))
 
-# Exibir os dados armazenados
-print("\nDados cadastrados:")
-print("Nome Completo:", dados_usuario["Nome Completo"])
-print("Email:", dados_usuario["Email"])
-print("Data de Nascimento:", dados_usuario["Data de Nascimento"])
+    match opcoes:
+        case 1:
+            print("\n--- CADASTRO ---")
+            novo_usuario = input("Crie um nome de usuario: ")
+            if novo_usuario in usuarios:
+                print("Este ususario já existe. Tente novamente.")
+            else:
+                senha = input("Crie uma senha: ")
+                usuarios[novo_usuario] = senha 
+                print("Cadatro rea lizado com sucesso!")               
